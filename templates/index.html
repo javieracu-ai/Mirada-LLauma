@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirada LLauma — Mira el mundo con nuevos ojos</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #fafafa;
+            color: #111;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 420px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            box-sizing: border-box;
+        }
+        .brand {
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        h1 {
+            font-size: 24px;
+            line-height: 1.3;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+        .gift-box {
+            background: #f4f6f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .gift-box h3 {
+            margin: 0 0 5px 0;
+            font-size: 16px;
+            color: #111;
+        }
+        .gift-box p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        input:focus {
+            border-color: #111;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 13px;
+            color: #666;
+            margin-top: 5px;
+        }
+        .checkbox-container input {
+            margin-top: 2px;
+        }
+        button {
+            background-color: #111;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="brand">Mirada LLauma</div>
+        <h1>Mira el mundo con nuevos ojos.</h1>
+        <p>Ideas, herramientas y recursos para desarrollar criterio, disciplina y construir una vida con mayor intención.</p>
+        
+        <div class="gift-box">
+            <h3>🎁 RECIBE EL LIBRO GRATIS</h3>
+            <p>Un libro para detenerte, pensar y volver a mirar.</p>
+        </div>
+
+        <form action="/guardar" method="POST">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <input type="email" name="email" placeholder="Tu correo electrónico" required>
+            <input type="tel" name="whatsapp" placeholder="Tu WhatsApp / celular" required>
+            
+            <div class="checkbox-container">
+                <input type="checkbox" id="terminos" required>
+                <label for="terminos">Acepto recibir el recurso y comunicaciones relacionadas.</label>
+            </div>
+
+            <button type="submit">QUIERO RECIBIR EL LIBRO</button>
+        </form>
+    </div>
+
+</body>
+</html>

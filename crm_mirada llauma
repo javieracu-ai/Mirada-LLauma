@@ -1,0 +1,62 @@
+from datetime import datetime
+import sqlite3
+
+from flask import Flask, redirect, render_template, request, url_for
+
+app = Flask(__name__)
+
+
+def init_db():
+	conn = sqlite3.connect("database.db")
+	try:
+		cursor = conn.cursor()
+		cursor.execute("""
+			CREATE TABLE IF NOT EXISTS prospectos (
+				id INTEGER PRIMARY KEY AUTOINCREMENT,
+				nombre TEXT NOT NULL,
+				email TEXT NOT NULL,
+				whatsapp TEXT NOT NULL,
+				fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+			)
+		""")
+		conn.commit()
+	finally:
+		conn.close()
+
+
+init_db()
+
+
+@app.route("/")
+def index():
+	return render_template("index.html")
+
+
+@app.route("/guardar", methods=["POST"])
+def guardar():
+	nombre = request.form["nombre"]
+	email = request.form["email"]
+	whatsapp = request.form["whatsapp"]
+
+	conn = sqlite3.connect("database.db")
+	try:
+		cursor = conn.cursor()
+		cursor.execute(
+			"INSERT INTO prospectos (nombre, email, whatsapp) VALUES (?, ?, ?)",
+			(nombre, email, whatsapp),
+		)
+		conn.commit()
+	finally:
+		conn.close()
+
+	return redirect(url_for("gracias"))
+
+
+@app.route("/gracias")
+def gracias():
+	return render_template("gracias.html")
+
+
+if __name__ == "__main__":
+	app.run(debug=True)
+

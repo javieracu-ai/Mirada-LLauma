@@ -1,0 +1,83 @@
+from datetime import datetime
+import os
+import sqlite3
+from flask import Flask, redirect, render_template, request, send_from_directory, url_for
+
+app = Flask(__name__)
+
+UPLOAD_FOLDER = os.path.abspath(os.path.dirname(__file__))
+app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
+
+
+def init_db():
+  conn = sqlite3.connect("database.db")
+  cursor = conn.cursor()
+  cursor.execute("""
+        CREATE TABLE IF NOT EXISTS prospectos (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nombre TEXT NOT NULL,
+            email TEXT NOT NULL,
+            whatsapp TEXT NOT NULL,
+            fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+  conn.commit()
+  conn.close()
+
+
+init_db()
+
+
+@app.route("/")
+def index():
+  return render_template("index.html")
+
+
+@app.route("/guardar", methods=["POST"])
+def guardar():
+  nombre = request.form["nombre"]
+  email = request.form["email"]
+  whatsapp = request.form["whatsapp"]
+
+  conn = sqlite3.connect("database.db")
+  cursor = conn.cursor()
+  cursor.execute(
+      "INSERT INTO prospectos (nombre, email, whatsapp) VALUES (?, ?, ?)",
+      (nombre, email, whatsapp),
+  )
+  conn.commit()
+  conn.close()
+
+  return redirect(url_for("gracias"))
+
+
+@app.route("/gracias")
+def gracias():
+  return render_template("gracias.html")
+
+
+@app.route("/descargar-libro")
+def descargar_libro():
+  return send_from_directory(
+      app.config["UPLOAD_FOLDER"],
+      "claridad_en_el_fuego.pdf",
+      as_attachment=True,
+  )
+
+
+# NUEVA RUTA: Panel de administración para ver los prospectos
+@app.route("/admin")
+def admin():
+  conn = sqlite3.connect("database.db")
+  cursor = conn.cursor()
+  cursor.execute(
+      "SELECT id, nombre, email, whatsapp, fecha FROM prospectos ORDER BY fecha"
+      " DESC"
+  )
+  prospectos = cursor.fetchall()
+  conn.close()
+  return render_template("admin.html", prospectos=prospectos)
+
+
+if __name__ == "__main__":
+  app.run(debug=True)
