@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Continúa explorando — Mirada LLauma</title>
+    <title>Registro Exitoso — Mirada LLauma</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -20,69 +20,66 @@
             width: 100%;
             max-width: 480px;
             background: #ffffff;
-            padding: 30px;
+            padding: 35px;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             box-sizing: border-box;
         }
         .success-badge {
-            background: #e6f4ea;
+            display: inline-block;
+            background-color: #e6f4ea;
             color: #137333;
-            font-size: 13px;
-            font-weight: 600;
             padding: 6px 12px;
             border-radius: 20px;
-            display: inline-block;
+            font-size: 13px;
+            font-weight: 600;
             margin-bottom: 15px;
         }
         h1 {
-            font-size: 22px;
+            font-size: 24px;
             line-height: 1.3;
             margin-top: 0;
             margin-bottom: 10px;
+            font-weight: 700;
         }
         p {
             color: #555;
-            font-size: 14px;
+            font-size: 15px;
             line-height: 1.5;
             margin-bottom: 25px;
         }
-        .resource-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .resource-card {
-            display: flex;
-            align-items: center;
-            padding: 12px 15px;
-            border: 1px solid #eee;
+        .card {
+            display: block;
+            background: #f9f9f9;
+            border: 1px solid #e5e5e5;
+            padding: 15px 20px;
             border-radius: 8px;
+            margin-bottom: 12px;
             text-decoration: none;
             color: #111;
-            background: #fff;
             transition: all 0.2s;
         }
-        .resource-card:hover {
+        .card:hover {
             border-color: #111;
-            background: #fcfcfc;
+            background: #fff;
         }
-        .resource-icon {
-            font-size: 20px;
-            margin-right: 15px;
-        }
-        .resource-info h3 {
-            margin: 0 0 3px 0;
+        .card h3 {
+            margin: 0 0 4px 0;
             font-size: 15px;
+            font-weight: 600;
         }
-        .resource-info p {
+        .card p {
             margin: 0;
-            font-size: 12px;
+            font-size: 13px;
             color: #666;
         }
-        .highlight-card {
-            border: 1px solid #111;
-            background: #f8f9fa;
+        .submenu-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #333;
+            margin: 20px 0 8px 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
@@ -91,54 +88,65 @@
     <div class="container">
         <div class="success-badge">✓ Registro exitoso</div>
         <h1>Continúa explorando</h1>
-        <p>Tu libro ya está listo para descargarse. Además, puedes explorar los siguientes espacios de nuestra comunidad:</p>
+        <p>Tus recursos ya están listos para abrirse. Además, puedes explorar los siguientes espacios de nuestra comunidad:</p>
         
-        <div class="resource-list">
-            <!-- El Libro (Descarga directa local) -->
-            <a href="/descargar-libro" class="resource-card highlight-card">
-                <span class="resource-icon">📖</span>
-                <div class="resource-info">
-                    <h3>El libro: Claridad en el Fuego</h3>
-                    <p>Haz clic aquí para descargar tu recurso gratuito.</p>
-                </div>
-            </a>
+        <!-- Libro (Progreso): Claridad en el Fuego -->
+        <a href="/descargar-libro" target="_blank" class="card">
+            <h3>Libro (Progreso): Claridad en el Fuego</h3>
+            <p>Haz clic aquí para abrir tu recurso gratuito.</p>
+        </a>
 
-            <!-- Podcast Tribus (Enlace externo corregido con https://) -->
-            <a href="https://open.spotify.com/show/5eMAIiUjMwcCpCnKSl1BAQ" target="_blank" class="resource-card">
-                <span class="resource-icon">🎙️</span>
-                <div class="resource-info">
-                    <h3>Podcast Tribus</h3>
-                    <p>Conversaciones e ideas para desarrollar criterio.</p>
-                </div>
-            </a>
+        <!-- Libro (Prosperidad): El Arte de lo Invisible -->
+        <a href="/descargar-arte-invisible" target="_blank" class="card">
+            <h3>Libro (Prosperidad): El Arte de lo Invisible</h3>
+            <p>Haz clic aquí para abrir tu recurso gratuito.</p>
+        </a>
 
-            <!-- Mirada LLauma y Redes Sociales -->
-            <a href="https://tiktok.com" target="_blank" class="resource-card">
-                <span class="resource-icon">🎬</span>
-                <div class="resource-info">
-                    <h3>Mirada LLauma (TikTok / Instagram)</h3>
-                    <p>Videos sobre percepción, transformación y desarrollo personal.</p>
-                </div>
-            </a>
+        <!-- SECCIÓN: Spotify -->
+        <div class="submenu-title">Spotify</div>
 
-            <!-- Educación Financiera y Criterio -->
-            <a href="#" class="resource-card">
-                <span class="resource-icon">🧠</span>
-                <div class="resource-info">
-                    <h3>El Ciclo & Finanzas</h3>
-                    <p>Contenido para observar cómo pensamos y construimos patrimonio.</p>
-                </div>
-            </a>
+        <!-- Spotify: Tribus -->
+        <a href="https://open.spotify.com/show/5eMAIiUjMwcCpCnKSl1BAQ?si=c292da0caea34f13" target="_blank" class="card">
+            <h3>Tribus</h3>
+            <p>Conversaciones e ideas para desarrollar criterio.</p>
+        </a>
 
-            <!-- Emprender / Alternativa Empresarial -->
-            <a href="#" class="resource-card">
-                <span class="resource-icon">🚀</span>
-                <div class="resource-info">
-                    <h3>Emprender (Alternativa Económica)</h3>
-                    <p>Conoce la comunidad y el modelo empresarial que estamos construyendo.</p>
-                </div>
-            </a>
-        </div>
+        <!-- Spotify: LLauma -->
+        <a href="https://open.spotify.com/episode/4ypLBEKYwopLPPlJD7sab1?si=T2dev4AOR8O8GxrAL-jgVQ&utm_source=copy-link" target="_blank" class="card">
+            <h3>LLauma</h3>
+            <p>Espacio de audio y contenidos de Mirada LLauma.</p>
+        </a>
+
+        <!-- SECCIÓN: Redes Sociales -->
+        <div class="submenu-title">Redes Sociales</div>
+        
+        <a href="https://www.instagram.com/llauma0/?hl=es-la" target="_blank" class="card">
+            <h3>Instagram</h3>
+            <p>Videos sobre percepción, transformación y desarrollo personal.</p>
+        </a>
+
+        <a href="https://www.tiktok.com/@llauma6" target="_blank" class="card">
+            <h3>TikTok</h3>
+            <p>Videos cortos sobre mentalidad y desarrollo personal.</p>
+        </a>
+
+        <a href="https://www.youtube.com/@llauma7218" target="_blank" class="card">
+            <h3>YouTube</h3>
+            <p>Reflexiones y contenido en formato extendido.</p>
+        </a>
+
+        <!-- SECCIÓN: Emprender LLauma -->
+        <div class="submenu-title">Emprender LLauma</div>
+
+        <a href="#" class="card">
+            <h3>El Ciclo & Finanzas</h3>
+            <p>Contenido para observar cómo pensamos y construimos patrimonio.</p>
+        </a>
+
+        <a href="#" class="card">
+            <h3>Emprender (Alternativa Económica)</h3>
+            <p>Conoce la comunidad y el modelo empresarial que estamos construyendo.</p>
+        </a>
     </div>
 
 </body>
