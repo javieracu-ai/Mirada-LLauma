@@ -3,104 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRM Prospectos — Panel de Administración</title>
+    <title>Registro Exitoso — Mirada LLauma</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #fafafa;
+            background-color: #f7f9fa;
             color: #111;
             margin: 0;
-            padding: 40px 20px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
         .container {
-            max-width: 900px;
-            margin: 0 auto;
+            width: 100%;
+            max-width: 500px;
             background: #ffffff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            box-sizing: border-box;
         }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
+        .success-badge {
+            display: inline-block;
+            background-color: #e6f4ea;
+            color: #137333;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
         h1 {
-            font-size: 22px;
-            margin: 0;
+            font-size: 24px;
+            line-height: 1.3;
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
-        .badge {
-            background: #111;
-            color: white;
-            font-size: 12px;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-weight: 600;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
+        p.subtitle {
+            color: #666;
             font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 30px;
         }
-        th, td {
-            padding: 12px 15px;
-            border-bottom: 1px solid #eee;
-        }
-        th {
-            background-color: #f8f9fa;
-            color: #444;
-            font-weight: 600;
-        }
-        tr:hover {
-            background-color: #fcfcfc;
-        }
-        .back-link {
-            display: inline-block;
-            margin-top: 20px;
+        
+        /* Secciones */
+        .section-header {
+            font-size: 16px;
+            font-weight: 700;
             color: #111;
+            margin: 28px 0 12px 2px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-header::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #eaeaea;
+            margin-left: 10px;
+        }
+
+        /* Tarjetas de Enlaces */
+        .card {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            border: 1px solid #e6e8eb;
+            padding: 14px 18px;
+            border-radius: 10px;
+            margin-bottom: 10px;
             text-decoration: none;
+            color: #111;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+        }
+        .card:hover {
+            border-color: #111;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            background: #fff;
+        }
+        .card-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: #f1f3f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 14px;
+            flex-shrink: 0;
+            color: #333;
+        }
+        .card-content h3 {
+            margin: 0 0 2px 0;
             font-size: 14px;
             font-weight: 600;
+            color: #1a1a1a;
         }
-        .back-link:hover {
-            text-decoration: underline;
+        .card-content p {
+            margin: 0;
+            font-size: 12px;
+            color: #6c757d;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="header">
-            <h1>Panel de Prospectos (CRM)</h1>
-            <span class="badge">El Constructor</span>
-        </div>
+        <div class="success-badge">✓ Registro exitoso</div>
+        <h1>Espacios de Comunidad</h1>
+        <p class="subtitle">Tus recursos y accesos ya están listos. Explora cada sección a tu propio ritmo:</p>
+        
+        <!-- SECCIÓN 1: OBSERVA -->
+        <div class="section-header">Observa</div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Correo electrónico</th>
-                    <th>WhatsApp</th>
-                    <th>Fecha de registro</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for prospecto in prospectos %}
-                <tr>
-                    <td>{{ prospecto[0] }}</td>
-                    <td><strong>{{ prospecto[1] }}</strong></td>
-                    <td>{{ prospecto[2] }}</td>
-                    <td>{{ prospecto[3] }}</td>
-                    <td>{{ prospecto[4] }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        <!-- Claridad en el Fuego -->
+        <a href="/descargar-libro" target="_blank" class="card">
+            <div class="card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            </div>
+            <div class="card-content">
+                <h3>Claridad en el Fuego</h3>
+                <p>Libro (Libro)</p>
+            </div>
+        </a>
 
-        <a href="/" class="back-link">← Volver a la Landing Page</a>
+        <!-- El Arte de lo Invisible -->
+        <a href="/descargar-arte-invisible" target="_blank" class="card">
+            <div class="card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            </div>
+            <div class="card-content">
+                <h3>El Arte de lo Invisible</h3>
+                <p>Libro (Libro)</p>
+            </div>
+        </a>
+
+
+        <!-- SECCIÓN 2: COMPRENDE -->
+        <div class="section-header">Comprende</div>
+
+        <!-- Spotify Bienestar -->
+        <a href="https://open.spotify.com/episode/7r8kYFzGcxHLTfcOHEel9F?si=D2MvenQoQ06ePCkQe86bew&utm_source=copy-link" target="_blank" class="card">
+            <div class="card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 12h8"></path><path d="M12 8v8"></path></svg>
+            </div>
+            <div class="card-content">
+                <h3>Spotify Bienestar</h3>
+                <p>Vive más - Vive mejor</p>
+            </div>
+        </a>
+
+        <!-- Spotify Llauma -->
+        <a href="https://open.spotify.com/episode/4ypLBEKYwopLPPlJD7sab1?si=T2dev4AOR8O8GxrAL-jgVQ&utm_source=copy-link" target="_blank" class="card">
+            <div class="card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+            </div>
+            <div class="card-content">
+                <h3>Spotify</h3>
+                <p>Llauma</p>
+            </div>
+        </a>
+
+        <!-- Spotify Tribus -->
+        <a href="https://open.spotify.com/show/5eMAIiUjMwcCpCnKSl1BAQ?si=c292da0caea34f13" target="_blank" class="card">
+            <div class="card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+            </div>
+            <div class="card-content">
+                <h3>Spotify Tribus</h3>
+                <p>Conversaciones e ideas</p>
+            </div>
+        </a>
+
+
+        <!-- SECCIÓN 3: TRANSFORMA -->
+        <div class="section-header">Transforma</div>
+
+        <!-- Tribus U -->
+        <a href="https://share.google/GEUZxpzfRtvOZLV5q" target="_blank" class="card">
+            <div class="card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <div class="card-content">
+                <h3>Tribus U</h3>
+                <p>Comunidad y formación</p>
+            </div>
+        </a>
+
+        <!-- Emprender es el Camino -->
+        <a href="https://emprender-es-el-camino.jimdosite.com/" target="_blank" class="card">
+            <div class="card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </div>
+            <div class="card-content">
+                <h3>Emprender es el Camino</h3>
+                <p>Modelo económico y alternativa</p>
+            </div>
+        </a>
+
+        <!-- LLauma (Actualizado con el enlace Jimdo) -->
+        <a href="https://chimma.jimdofree.com/emprendizaje/" target="_blank" class="card">
+            <div class="card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+            </div>
+            <div class="card-content">
+                <h3>LLauma</h3>
+                <p>Espacio de emprendizaje</p>
+            </div>
+        </a>
+
     </div>
 
 </body>
