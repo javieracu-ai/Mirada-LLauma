@@ -3,225 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Exitoso — Mirada LLauma</title>
+    <title>Administración | Mirada LLauma</title>
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f7f9fa;
-            color: #111;
             margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            padding: 32px;
+            background: #f5f6f8;
+            color: #202124;
+            font-family: Arial, sans-serif;
         }
-        .container {
-            width: 100%;
-            max-width: 500px;
-            background: #ffffff;
-            padding: 40px 30px;
-            border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-            box-sizing: border-box;
-        }
-        .success-badge {
-            display: inline-block;
-            background-color: #e6f4ea;
-            color: #137333;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 20px;
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
         }
         h1 {
-            font-size: 24px;
-            line-height: 1.3;
-            margin-top: 0;
-            margin-bottom: 8px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
+            margin: 0 0 20px;
         }
-        p.subtitle {
-            color: #666;
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 30px;
-        }
-        
-        /* Secciones */
-        .section-header {
-            font-size: 16px;
-            font-weight: 700;
-            color: #111;
-            margin: 28px 0 12px 2px;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .section-header::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: #eaeaea;
-            margin-left: 10px;
-        }
-
-        /* Tarjetas de Enlaces */
-        .card {
-            display: flex;
-            align-items: center;
-            background: #ffffff;
-            border: 1px solid #e6e8eb;
-            padding: 14px 18px;
-            border-radius: 10px;
-            margin-bottom: 10px;
-            text-decoration: none;
-            color: #111;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.01);
-        }
-        .card:hover {
-            border-color: #111;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        .table-wrap {
+            overflow-x: auto;
             background: #fff;
-        }
-        .card-icon {
-            width: 36px;
-            height: 36px;
+            border: 1px solid #e2e5e9;
             border-radius: 8px;
-            background: #f1f3f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 14px;
-            flex-shrink: 0;
-            color: #333;
         }
-        .card-content h3 {
-            margin: 0 0 2px 0;
-            font-size: 14px;
-            font-weight: 600;
-            color: #1a1a1a;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            white-space: nowrap;
         }
-        .card-content p {
-            margin: 0;
-            font-size: 12px;
-            color: #6c757d;
+        th, td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e2e5e9;
+            text-align: left;
+        }
+        th {
+            background: #f8f9fa;
+        }
+        tr:last-child td {
+            border-bottom: 0;
+        }
+        select {
+            padding: 6px 8px;
+        }
+        .empty {
+            padding: 24px;
+            color: #666;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 16px;
+            }
         }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <div class="success-badge">✓ Registro exitoso</div>
-        <h1>Espacios de Comunidad</h1>
-        <p class="subtitle">Tus recursos y accesos ya están listos. Explora cada sección a tu propio ritmo:</p>
-        
-        <!-- SECCIÓN 1: OBSERVA -->
-        <div class="section-header">Observa</div>
-
-        <!-- Claridad en el Fuego -->
-        <a href="/descargar-libro" target="_blank" class="card">
-            <div class="card-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-            </div>
-            <div class="card-content">
-                <h3>Claridad en el Fuego</h3>
-                <p>Libro (Libro)</p>
-            </div>
-        </a>
-
-        <!-- El Arte de lo Invisible -->
-        <a href="/descargar-arte-invisible" target="_blank" class="card">
-            <div class="card-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-            </div>
-            <div class="card-content">
-                <h3>El Arte de lo Invisible</h3>
-                <p>Libro (Libro)</p>
-            </div>
-        </a>
-
-
-        <!-- SECCIÓN 2: COMPRENDE -->
-        <div class="section-header">Comprende</div>
-
-        <!-- Spotify Bienestar -->
-        <a href="https://open.spotify.com/episode/7r8kYFzGcxHLTfcOHEel9F?si=D2MvenQoQ06ePCkQe86bew&utm_source=copy-link" target="_blank" class="card">
-            <div class="card-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 12h8"></path><path d="M12 8v8"></path></svg>
-            </div>
-            <div class="card-content">
-                <h3>Spotify Bienestar</h3>
-                <p>Vive más - Vive mejor</p>
-            </div>
-        </a>
-
-        <!-- Spotify Llauma -->
-        <a href="https://open.spotify.com/episode/4ypLBEKYwopLPPlJD7sab1?si=T2dev4AOR8O8GxrAL-jgVQ&utm_source=copy-link" target="_blank" class="card">
-            <div class="card-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-            </div>
-            <div class="card-content">
-                <h3>Spotify</h3>
-                <p>Llauma</p>
-            </div>
-        </a>
-
-        <!-- Spotify Tribus -->
-        <a href="https://open.spotify.com/show/5eMAIiUjMwcCpCnKSl1BAQ?si=c292da0caea34f13" target="_blank" class="card">
-            <div class="card-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-            </div>
-            <div class="card-content">
-                <h3>Spotify Tribus</h3>
-                <p>Conversaciones e ideas</p>
-            </div>
-        </a>
-
-
-        <!-- SECCIÓN 3: TRANSFORMA -->
-        <div class="section-header">Transforma</div>
-
-        <!-- Tribus U -->
-        <a href="https://share.google/GEUZxpzfRtvOZLV5q" target="_blank" class="card">
-            <div class="card-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-            </div>
-            <div class="card-content">
-                <h3>Tribus U</h3>
-                <p>Comunidad y formación</p>
-            </div>
-        </a>
-
-        <!-- Emprender es el Camino -->
-        <a href="https://emprender-es-el-camino.jimdosite.com/" target="_blank" class="card">
-            <div class="card-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-            </div>
-            <div class="card-content">
-                <h3>Emprender es el Camino</h3>
-                <p>Modelo económico y alternativa</p>
-            </div>
-        </a>
-
-        <!-- LLauma (Actualizado con el enlace Jimdo) -->
-        <a href="https://chimma.jimdofree.com/emprendizaje/" target="_blank" class="card">
-            <div class="card-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-            </div>
-            <div class="card-content">
-                <h3>LLauma</h3>
-                <p>Espacio de emprendizaje</p>
-            </div>
-        </a>
-
-    </div>
-
+    <main>
+        <h1>Prospectos</h1>
+        <div class="table-wrap">
+            {% if prospectos %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>WhatsApp</th>
+                            <th>Assistant's Name</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for prospecto in prospectos %}
+                            <tr>
+                                <td>{{ prospecto[1] }}</td>
+                                <td>{{ prospecto[2] }}</td>
+                                <td>{{ prospecto[3] or '' }}</td>
+                                <td>
+                                    <form action="{{ url_for('actualizar_assistant', id=prospecto[0]) }}" method="POST" style="margin: 0;">
+                                        <select name="assistant_name" onchange="this.form.submit()" aria-label="Assistant's Name para {{ prospecto[1] }}">
+                                            <option value="1" {% if prospecto[4] == '1' %}selected{% endif %}>1</option>
+                                            <option value="2" {% if prospecto[4] == '2' %}selected{% endif %}>2</option>
+                                            <option value="3" {% if prospecto[4] == '3' %}selected{% endif %}>3</option>
+                                        </select>
+                                    </form>
+                                </td>
+                                <td>{{ prospecto[5] or '' }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p class="empty">Todavía no hay prospectos registrados.</p>
+            {% endif %}
+        </div>
+    </main>
 </body>
 </html>
